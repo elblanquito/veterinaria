@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        font-family: '8bitoperator';
+        text-align: center;
+    }
+
+    #lluvia {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #98EECC;
+            z-index: -1;
+        }
+
+        .atake {
+            position: absolute;
+            top: -140px;
+            animation: fall 3s, rotate 3s linear infinite;
+            animation-iteration-count: 1;
+            
+
+            
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+
+
+        @keyframes fall {
+            0% {
+                top: -100px;
+            }
+            100% {
+                top: 120%;
+            }
+        }
+    .paleta-de-colores{
+    background-color: 
+    #98EECC
+    #D0F5BE
+    #FBFFDC
+    #A4907C
+    }
+
+    .cont {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        justify-content: center;
+        
+    }
+
+    .title{
+        text-align: center;
+        text-shadow: 1px 1px 2px black;
+        font-size: 35px;
+        color: #D0F5BE;
+        -webkit-text-stroke: 0.5px #A4907C;
+        padding: 20px;
+    }
+
+    .hoja{
+        background-color: #FBFFDC;
+        width: 90vw;
+        box-shadow: 1px 1px 5px black;
+        margin: auto;
+        margin-bottom: 1000px;
+
+    }
+
+    .col1 {
+        border: solid 1px black;
+    }
+
+    
+
+    .ch1{
+        border: solid px #A4907C;
+        margin-right: -5px;
+        margin: 20px;
+        
+    }
+
+    .ch2{
+        border: solid 2px #A4907C;
+        margin-left: -5px;
+        
+    }
+
+    .ch1-p1{
+        font-size: 25px;
+    }
+
+    .ch2-p1{
+        font-size: 25px;
+    }
+
+    .form-p{
+        text-align: left;
+        color: #A4907C;
+        -webkit-text-stroke: 0.5px #612f008e;
+        
+    }
+
+    .form-control,.form-select,option{
+        text-align: left;
+        color: #FBFFDC;
+        background-color: #D0F5BE;
+        border: solid 1px #A4907C;
+
+    }
+
+    option,.form-select,.form-control{
+        -webkit-text-stroke: 0px #ffffff46;
+        text-shadow: 0px -0.5px 2px black;
+    }
+
+    .form-control:focus,.form-select:focus{
+        color:black;
+        text-shadow: 0px 0px 0px black;
+        border: solid 2px #A4907C;
+    }
+
+    .form-select option:checked {
+      background-color: #63af67;
+      color: #ffffff;
+    }
+
+
+
+
+    .form-select option {
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 8px;
+    }
+
+    .form-select option:hover {
+      background-color: #000000;
+      color: #000000;
+    }
+
+
+
+
+
+
+    .paleta-de-colores{
+    background-color: 
+    #98EECC
+    #D0F5BE
+    #FBFFDC
+    #A4907C
+    }
+</style>
+
+<!-- d-flex justify-content-center -->
+<body>
+    <div id="lluvia"></div>
+    <div class="cont">
+    <div class="title"> ADMINISTRADOR DE CITAS VETERINARIAS</div>
+    <div class="hoja row">
+        <div class="col-md-6 col1">
+            <div class="ch1">
+                <p class="ch1-p1">crear nueva cita</p>
+                <form class="needs-validation" id="form1" novalidate>
+                    <div class="mb-3 form-p">
+                      <label for="exampleInputEmail1" class="form-label">Nombre de la mascota</label>
+                      <input type="text" class="form-control" id="nombre1" required>
+                      <div class="invalid-feedback" id="error-nombre1">
+                        es necesario poner un nombre
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3 form-p">
+                      <label for="exampleInputEmail1" class="form-label">Propietario</label>
+                      <input type="text" class="form-control" id="nombre2" required>
+                      <div class="invalid-feedback" id="error-nombre2">
+                        es necesario poner un nombre
+                      </div>
+                    </div>
+
+                    <div class="mb-3 form-p">
+                        <label for="exampleInputEmail1" class="form-label">telefono</label>
+                        <input type="number" class="form-control" id="telefono">
+                        <div class="invalid-feedback" id="error-telefono">
+                            es necesario poner un numero telefonico
+                          </div>
+                      </div>
+                      
+                      <div class="mb-3 form-p">
+                        <label for="exampleInputEmail1" class="form-label">fecha</label>
+                        <input type="date" class="form-control" id="fecha">
+                        <div class="invalid-feedback" id="error-fecha">
+                            es necesario especificar una fecha
+                          </div>
+                      </div>
+
+                      <div class="mb-3 form-p">
+                        <label for="exampleInputEmail1" class="form-label ">hora</label>
+                        <input type="time" class="form-control" id="hora">
+                        <div class="invalid-feedback" id="error-hora">
+                            es necesario especificar una hora
+                          </div>
+                      </div>
+
+                      <div class="mb-3 form-p">
+                        <label for="exampleInputEmail1" class="form-label">tipo</label>
+                        <select class="form-select" aria-label="Default select example" id="tipo">
+                            <option selected></option>
+                            <option value="1 ">ave</option>
+                            <option value="2">manifero</option>
+                            <option value="3">pez</option>
+                            <option value="4">lagarto</option>
+                          </select>
+                          <div class="invalid-feedback" id="error-tipo">
+                            por favor elija el tipo
+                          </div>
+                      </div>
+                      <div class="mb-3 form-p">
+                        <label for="exampleInputEmail1" class="form-label">sintomas</label>
+                        <input type="text"  class="form-control" id="sintomas">
+                        <div class="invalid-feedback" id="error-sintomas">
+                            de una breve descripcion de su estado
+                          </div>
+                      </div>
+
+
+                    <button id="enviar" type="button" onclick="subir()">subir</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 col2">
+            <div class="ch2">
+                <p class="ch2-p1">citas registradas</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+            document.addEventListener('DOMContentLoaded', function() {
+            let num1
+            let num2
+            let num3
+            let num4
+            let num5
+
+
+
+            const container = document.getElementById('lluvia');
+            let idCounter = 0;
+
+            // Función para crear un nuevo div "atake"
+            function createAtakeDiv() {
+                const atakeDiv = document.createElement("img");
+                atakeDiv.src = "./img/icon1.png";
+
+                atakeDiv.className = 'atake';
+                atakeDiv.style.opacity = 0.2;
+                //atakeDiv.style.backgroundColor = getRandomColor();
+                atakeDiv.id = 'atake_' + idCounter;
+                idCounter++;
+
+
+                num1 = Math.floor(Math.random() * 100)+20
+                num2 = Math.floor(Math.random() * 100)+18
+                num3 = Math.floor(Math.random() * 15)+10
+                num4 = Math.floor(Math.random() * 15)+10
+                num5 = Math.floor(Math.random() * 101)+1
+                
+                
+                atakeDiv.style.width = num1+'px';
+                atakeDiv.style.height = num1+'px';
+                atakeDiv.style.animation = `fall ${num3}s linear, rotate ${num4}s infinite `;
+                atakeDiv.style.left = num5+'vw';
+
+                container.appendChild(atakeDiv);
+
+
+                setTimeout(function() {
+                        removeAtakeDiv(atakeDiv.id);
+                        console.log(atakeDiv.id + "eliminado");
+                }, 25000);
+            }
+
+            // Función para eliminar un div "atake" dado su ID
+            function removeAtakeDiv(atakeId) {
+                const atakeDiv = document.getElementById(atakeId);
+                if (atakeDiv) {
+                    atakeDiv.parentNode.removeChild(atakeDiv);
+                }
+            }
+
+            // Función para generar un color aleatorio en formato hexadecimal
+            function getRandomColor() {
+                const letters = 'ffff000000ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color + "70";
+            }
+
+            // Crear un nuevo div "atake" cada segundo
+            setInterval(function() {
+                createAtakeDiv();
+            }, 500);
+        });
+
+
+
+
+    var fechaInput = document.getElementById('fecha');
+    // Crear una nueva fecha con la fecha actual
+    var fechaActual = new Date();
+    // Obtener el año, mes y día de la fecha actual
+    var anioActual = fechaActual.getFullYear();
+    var mesActual = fechaActual.getMonth() + 1; // Los meses comienzan desde 0
+    var diaActual = fechaActual.getDate();
+
+    // Formatear la fecha actual como YYYY-MM-DD
+    var fechaMinima = anioActual + '-' + (mesActual < 10 ? '0' + mesActual : mesActual) + '-' + ((parseInt(diaActual)+1) < 10 ? '0' + (parseInt(diaActual)+1) : (parseInt(diaActual)+1));
+    // Establecer el atributo "min" del input a la fecha actual
+    console.log(fechaMinima)
+    fechaInput.setAttribute('min', fechaMinima);
+
+
+
+  
+
+
+
+
+
+var timeInput = document.getElementById('hora');
+
+timeInput.addEventListener('input', function () {
+  var selectedTime = this.value;
+  var minTime = this.getAttribute('min');
+  var maxTime = this.getAttribute('max');
+
+  if (selectedTime < minTime || selectedTime > maxTime) {
+    this.setCustomValidity("el horario es de 8:00 AM a 6:00 PM.");
+  } else {
+    this.setCustomValidity("");
+  }
+});
+
+
+
+let nombre1 = document.getElementById("nombre1");
+let nombre2 = document.getElementById("nombre2");
+let telefono = document.getElementById("telefono");
+let fecha = document.getElementById("fecha");
+let hora = document.getElementById("hora");
+let tipo = document.getElementById("tipo");
+let sintomas = document.getElementById("sintomas");
+
+let errornombre1 = document.getElementById("error-nombre1")
+let errornombre2 = document.getElementById("error-nombre2")
+let errortelefono = document.getElementById("error-telefono")
+let errorfecha = document.getElementById("error-fecha")
+let errorhora = document.getElementById("error-hora")
+let errortipo = document.getElementById("error-tipo")
+let errorsintomas = document.getElementById("error-sintomas")
+//document.getElementById("nombre").classList.add('is-invalid');
+//document.getElementById("nombre").classList.remove('is-invalid');
+//document.getElementById("error-nombre").textContent = 'El nombre debe tener al menos 3 caracteres.';
+
+
+//document.getElementById("nombre").classList.add('is-valid');
+
+
+//document.getElementById("nombre").addEventListener('change', event => {})
+//document.getElementById("nombre").addEventListener('input', event => {})
+
+
+
+
+
+let x = 0
+function validar (){
+        x=0
+
+        if (nombre1.value.trim()==""){
+            nombre1.classList.add('is-invalid');
+        } else {
+            nombre1.classList.remove('is-invalid');
+            nombre1.classList.add('is-valid');
+            x++
+        }
+
+        if (nombre2.value.trim()==""){
+            nombre2.classList.add('is-invalid');
+        } else {
+            nombre2.classList.remove('is-invalid');
+            nombre2.classList.add('is-valid');
+            x++
+        }
+
+        if (telefono.value.trim()==""){
+            telefono.classList.add('is-invalid');
+        } else {
+            telefono.classList.remove('is-invalid');
+            telefono.classList.add('is-valid');
+            x++
+        }
+
+        if (fecha.value.trim()==""){
+            fecha.classList.add('is-invalid');
+        } else {
+            fecha.classList.remove('is-invalid');
+            fecha.classList.add('is-valid');
+            x++
+        }
+
+        if (hora.value.trim()==""){
+            hora.classList.add('is-invalid');
+        } else {
+            hora.classList.remove('is-invalid');
+            hora.classList.add('is-valid');
+            x++
+        }
+
+        if (tipo.value.trim()==""){
+            tipo.classList.add('is-invalid');
+        } else {
+            tipo.classList.remove('is-invalid');
+            tipo.classList.add('is-valid');
+            x++
+        }
+
+        if (sintomas.value.trim()==""){
+            sintomas.classList.add('is-invalid');
+        } else {
+            sintomas.classList.remove('is-invalid');
+            sintomas.classList.add('is-valid');
+            x++
+        }
+
+
+
+
+    }
+
+
+function subir(){
+    nombre1.classList.add('is-valid');
+    validar()
+    form1.addEventListener('input', validar);
+}
+
+
+
+
+
+/* // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('change', event => {
+          form.classList.add('was-validated')
+          invalidFeedback.textContent = 'El nombre debe tener al menos 3 caracteres.';
+
+
+
+        if (document.getElementById("nombre").value.length < 3) {
+            document.getElementById("error-nombre").textContent = 'El nombre debe tener al menos 3 caracteres.';
+            document.getElementById("nombre").classList.add('is-invalid'); // Agregar una clase para aplicar estilos de validación personalizados
+        } else {
+           form.classList.add('was-validated');
+           document.getElementById("nombre").classList.remove('is-invalid'); // Remover la clase de estilo de validación personalizado si el nombre es válido
+        }
+        })
+    })
+    })() */
+
+
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</html>
